@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [theme, setTheme] = useState("retro");
@@ -13,26 +14,22 @@ const Nav = () => {
     } else {
       setTheme("dark");
     }
-    
   };
   return (
-    <div className="navbar gap-0 px-14 fixed shadow-md z-10">
+    <div className="navbar gap-0 px-14 fixed shadow-md z-10 primary-font">
       <div className="flex-1">
-        <a className="text-3xl font-extrabold flex gap-0">
-          Ignite <span className="text-[#ee9b00]">Forge</span>
-        </a>
+        <NavLink to='/' className="text-3xl font-extrabold flex gap-0">
+          Ignite <span className="text-[#e85d04]">Forge</span>
+        </NavLink>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 text-xl font-bold">
-          <li>
-            <a>Link</a>
-          </li>
-          <li>
-            <a>Blogs</a>
-          </li>
-          <li>
-            <a>Bookmarks</a>
-          </li>
+      <div className="flex-none gap-2">
+        <ul className="flex gap-4 px-1 text-xl font-bold">
+          <NavLink to="/" className={({isActive})=> isActive ? 'text-[#e85d04]':
+        ""}>Home</NavLink>
+          <NavLink to="/blogs" className={({isActive})=> isActive ? 'text-[#e85d04]':
+        ""} >Blogs</NavLink>
+          <NavLink to="/bookmarks" className={({isActive})=> isActive ? 'text-[#e85d04]':
+        ""} >Bookmarks</NavLink>
         </ul>
         <label className="swap swap-rotate">
           <input

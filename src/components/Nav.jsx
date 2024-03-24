@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
-  const [theme, setTheme] = useState("retro");
+  const [theme, setTheme] = useState("");
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
